@@ -17,9 +17,9 @@ The results for training and loss in terms of accuracy, true positives, true neg
 <img src="https://github.com/imrizvankhan/Hybrid5way/blob/main/Images/networks.jpg" height = 400 width = 600>
 <img src="https://github.com/imrizvankhan/Hybrid5way/blob/main/Images/vgg%2Bpca.jpg"  height = 300 width = 400>
 <img src="https://github.com/imrizvankhan/Hybrid5way/blob/main/Images/cf.jpg"  height = 300 width = 600>
-<img src="https://github.com/imrizvankhan/Hybrid5way/blob/main/Images/cf%2Bpca.jpg"  height = 400 width = 500>
-
-
-<img src="https://github.com/imrizvankhan/Hybrid5way/blob/main/Images/table%2Bpca%2Brf.jpg" height = 150 width = 400>
-<img src="https://github.com/imrizvankhan/Hybrid5way/blob/main/Images/adnidata.jpg" height = 100 width = 300>
+<img src="https://github.com/imrizvankhan/Hybrid5way/blob/main/Images/cf%2Bpca.jpg"  height = 600 width =800>
+<img src="https://github.com/imrizvankhan/Hybrid5way/blob/main/Images/adl%2Bfl%2Btable-other.jpg"  height = 800 width =800>
+<img src="https://github.com/imrizvankhan/Hybrid5way/blob/main/Images/pixels.jpg"  height = 350 width =450>
+<img src="https://github.com/imrizvankhan/Hybrid5way/blob/main/Images/table%2Bpca%2Brf.jpg" height = 150 width = 700>
+<img src="https://github.com/imrizvankhan/Hybrid5way/blob/main/Images/adnidata.jpg" height = 150 width = 400>
 
