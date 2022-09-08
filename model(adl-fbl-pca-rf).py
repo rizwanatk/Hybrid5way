@@ -1,6 +1,6 @@
 
 """
-Thsi code use VGG16 pretrain weights
+This code use VGG16 pretrain weights
 2- extract features
 3- Use PCA
 4- USE Random forest RF
@@ -91,6 +91,9 @@ VGG_model = VGG16(weights='imagenet', include_top=False, input_shape=(SIZE, SIZE
 
 # Make loaded layers as non-trainable. This is important as we want to work with pre-trained weights
 #for layer in VGG_model.layers:
+#for layer in VGG_model.layers[0:-3]:
+#for layer in VGG_model.layers[0:-6]:
+#for layer in VGG_model.layers[0:-9]:
 for layer in VGG_model.layers[0:-10]:
 #for layer in VGG_model.layers:
     layer.trainable = False
@@ -118,14 +121,10 @@ VGG_model.summary()  # Trainable parameters will be 0
 #plt.ylabel("Cum variance")
 #figp.savefig('confusion_matrix')
 
-# Pick the optimal number of components. This is how many features we will have
-# for our machine learning
-#n_PCA_components = 10
+# Pick components: features 
 #pca = PCA(n_components=n_PCA_components)
 #train_PCA = pca.fit_transform(train_features)
-#test_PCA = pca.transform(test_features)  # Make sure you are just transforming, not fitting.
-
-# If we want 90% information captured we can also try ...
+#test_PCA = pca.transform(test_features)  
 # pca=PCA(0.9)
 # principalComponents = pca.fit_transform(X_for_RF)
 
@@ -300,27 +299,16 @@ from sklearn.ensemble import RandomForestClassifier
 RF_model = RandomForestClassifier(n_estimators = 80, random_state = 42)
 
 # Train the model on training data
-RF_model.fit(train_PCA, y_train) #For sklearn no one hot encoding
-
-#Send test data through same feature extractor process
+RF_model.fit(train_PCA, y_train) 
 #X_test_feature = VGG_model.predict(x_test)
 #X_test_features = X_test_feature.reshape(X_test_feature.shape[0], -1)
 
-#Now predict using the trained RF model. 
+#predict using RF model. 
 prediction_RF = RF_model.predict(test_PCA)
-#Inverse le transform to get original label back. 
 prediction_RF = le.inverse_transform(prediction_RF)
-
 #Print overall accuracy
 from sklearn import metrics
 print ("Accuracy = ", metrics.accuracy_score(test_labels, prediction_RF))
-
-#Confusion Matrix - verify accuracy of each class
-from sklearn.metrics import confusion_matrix
-
-cm = confusion_matrix(test_labels, prediction_RF)
-#print(cm)
-sns.heatmap(cm, annot=True)
 
 """
 
